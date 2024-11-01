@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gerenciamento de Tarefas com Armazenamento Local</title>
-    <script src="localstorage.js"></script>
+    <script src="localstorage.js" defer></script>
     <link rel="stylesheet" href="localstorage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1 id="preencher"></h1>
     <form id="MeuFormulario">
         <p>Bem-vindo ao sistema! Bora começar? </p>
         <div>
-            ## Preenchimento dos dados
-            <label for="NomeDaTarefa">Nome da tarefa: </label>
-            <input type="text" id="NomeDaTarefa" placeholder="Digite o nome da tarefa">
+            <label for="NomedaTarefa">Nome da tarefa: </label>
+            <input type="text" id="NomedaTarefa" placeholder="Digite o nome da tarefa">
         </div>
 
         <div>
@@ -41,9 +43,15 @@
         </fieldset>
 
         <div>
-            <input type="text" placeholder="Digite sua tarefa">
-            <button type="button">Adicionar tarefa</button>
+            <input type="text" id="tarefaInput" placeholder="Digite sua tarefa">
+            <button type="button" id="adicionarTarefa">Adicionar tarefa</button>
         </div>
+
+        <ul id="taskList">
+        </ul>
+        <button id="filter-button">Filtrar por status</button>
+
+        <button id="filter-priority-button">Filtrar por Prioridade</button>
 
         <div>
             <button id="filter-all">Todas</button>
@@ -54,9 +62,19 @@
             <button id="filter-low">Baixa Prioridade</button>
         </div>
 
-        <ul id="taskList">
-        </ul>
-        
+        <style>
+            #filter-button.active {
+              background-color: blue;
+              color: white;
+            }
+          </style>
+
+        <style>
+            #filter-priority-button.active {
+                background-color: blueviolet;
+                color: white;
+            }
+        </style>
     </form>
 </body>
 </html>
